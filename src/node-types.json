@@ -1,0 +1,141 @@
+[
+  {
+    "type": "key",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "side_effects",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "side_effects",
+          "named": true
+        },
+        {
+          "type": "taint_side_effect",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "taint_side_effect",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "key",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "taint_summary",
+    "named": true,
+    "root": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "side_effects",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "(",
+    "named": false
+  },
+  {
+    "type": ")",
+    "named": false
+  },
+  {
+    "type": ",",
+    "named": false
+  },
+  {
+    "type": "-1",
+    "named": false
+  },
+  {
+    "type": "0",
+    "named": false
+  },
+  {
+    "type": "1",
+    "named": false
+  },
+  {
+    "type": "2",
+    "named": false
+  },
+  {
+    "type": "3",
+    "named": false
+  },
+  {
+    "type": "4",
+    "named": false
+  },
+  {
+    "type": "5",
+    "named": false
+  },
+  {
+    "type": "6",
+    "named": false
+  },
+  {
+    "type": "7",
+    "named": false
+  },
+  {
+    "type": "8",
+    "named": false
+  },
+  {
+    "type": "9",
+    "named": false
+  },
+  {
+    "type": "sanitize",
+    "named": false
+  },
+  {
+    "type": "setSink",
+    "named": false
+  },
+  {
+    "type": "swapTaint",
+    "named": false
+  },
+  {
+    "type": "transitive",
+    "named": false
+  },
+  {
+    "type": "{",
+    "named": false
+  },
+  {
+    "type": "}",
+    "named": false
+  },
+  {
+    "type": "Φ",
+    "named": false
+  }
+]
