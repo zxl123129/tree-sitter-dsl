@@ -5,14 +5,21 @@ module.exports = grammar({
     // 整个污点摘要的根规则
     taint_summary: $ => seq(
       '{',
-      $.side_effects,
+      optional($.side_effects), // 允许 side_effects 为空
       '}'
     ),
 
-    // SideEffects 规则：可以是空的（Φ）或由多个 TaintSideEffect 组成
-    side_effects: $ => choice(
-      'Φ', // 空集
-      seq($.taint_side_effect, $.side_effects) // 递归定义
+    // SideEffects 规则：匹配多个 TaintSideEffect，或者为空
+    side_effects: $ => seq(
+      $.taint_side_effect,
+      optional($.side_effects_tail) // 递归定义
+    ),
+
+    // SideEffects 的尾部规则：用于递归匹配多个 TaintSideEffect
+    side_effects_tail: $ => seq(
+      ',',
+      $.taint_side_effect,
+      optional($.side_effects_tail)
     ),
 
     // TaintSideEffect 规则：四种可能的操作
@@ -23,9 +30,11 @@ module.exports = grammar({
       seq('swapTaint', '(', $.key, ',', $.key, ')') // swapTaint(Key1, Key2)
     ),
 
-    // Key 规则：表示 -1 到 9 的整数
-    key: $ => choice(
-      '-1', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'
+    // Key 规则：表示 <-1>, <0>, <1>, ..., <9>
+    key: $ => seq(
+      '<',
+      choice('-1', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'),
+      '>'
     )
   }
 });

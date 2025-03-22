@@ -2,29 +2,30 @@
   "$schema": "https://tree-sitter.github.io/tree-sitter/assets/schemas/config.schema.json",
   "grammars": [
     {
-      "name": "test",
-      "camelcase": "test",
-      "title": "test",
-      "scope": "source.test",
+      "name": "taint_summary",
+      "camelcase": "TaintSummary",
+      "title": "TaintSummary",
+      "scope": "source.taint_summary",
       "file-types": [
-        "test"
+        "taint_summary"
       ],
-      "injection-regex": "^test$",
-      "class-name": "TreeSitterTest"
+      "injection-regex": "^taint_summary$",
+      "class-name": "TreeSitterTaintSummary"
     }
   ],
   "metadata": {
     "version": "0.1.0",
     "license": "MIT",
-    "description": "test",
+    "description": "TaintSummary grammar for tree-sitter",
     "authors": [
       {
-        "name": "zxl",
-        "email": "zxl"
+        "name": "z",
+        "email": "z",
+        "url": "https://github.com/z"
       }
     ],
     "links": {
-      "repository": "https://github.com/tree-sitter/tree-sitter-test"
+      "repository": "https://github.com/tree-sitter/tree-sitter-taint_summary"
     }
   },
   "bindings": {

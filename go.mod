@@ -1,4 +1,4 @@
-module github.com/tree-sitter/tree-sitter-test
+module github.com/tree-sitter/tree-sitter-taint_summary
 
 go 1.22
 

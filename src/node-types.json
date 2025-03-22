@@ -10,10 +10,29 @@
     "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
         {
-          "type": "side_effects",
+          "type": "side_effects_tail",
+          "named": true
+        },
+        {
+          "type": "taint_side_effect",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "side_effects_tail",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "side_effects_tail",
           "named": true
         },
         {
@@ -45,7 +64,7 @@
     "fields": {},
     "children": {
       "multiple": false,
-      "required": true,
+      "required": false,
       "types": [
         {
           "type": "side_effects",
@@ -111,6 +130,14 @@
     "named": false
   },
   {
+    "type": "<",
+    "named": false
+  },
+  {
+    "type": ">",
+    "named": false
+  },
+  {
     "type": "sanitize",
     "named": false
   },
@@ -132,10 +159,6 @@
   },
   {
     "type": "}",
-    "named": false
-  },
-  {
-    "type": "Φ",
     "named": false
   }
 ]
