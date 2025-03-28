@@ -1,1 +1,5 @@
-{ setSink(<1>), transitive(<1>, <2>), sanitize(<2>) }
+{
+  transitive(<0>, <2>),
+  sanitize(<-1>),
+  swapTaint(<3>, <4>)
+}
