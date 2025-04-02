@@ -1,0 +1,5 @@
+{
+  setSink(<0>),
+  transitiv(<1>, <2>),
+  sanitize(<3>)
+}
